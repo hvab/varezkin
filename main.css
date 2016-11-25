@@ -1,0 +1,71 @@
+html {
+  font-size: 16px;
+}
+
+.page {
+  display: flex;
+  min-height: 100vh;
+  margin: 0;
+
+  font-family:
+  /* Safari for OS X and iOS (San Francisco) */
+  -apple-system,
+  /* Chrome for OS X (San Francisco) */
+  BlinkMacSystemFont,
+  /* Windows */
+  "Segoe UI",
+  /* Android */
+  "Roboto",
+  /* Linux */
+  "Oxygen", /* KDE */
+  "Ubuntu",
+  "Cantarell", /* GNOME */
+  /* Firefox OS [R.I.P.] */
+  "Fira Sans",
+  /* Older Android */
+  "Droid Sans",
+  /* Basic web fallback */
+  "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.87);
+
+  background-color: #fff;
+}
+
+
+.page__container {
+  max-width: 600px;
+  margin: auto;
+
+  text-align: center;
+}
+
+
+.page__avatar {
+  display: block;
+  max-width: 200px;
+  height: auto;
+  margin: 0 auto 1rem;
+
+  border-radius: 50%;
+}
+
+
+.page__heading {
+  margin: 0 0 1rem;
+
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+
+.page__contacts {
+  margin: 0;
+  padding: 0;
+}
+
+.page__contacts > li {
+  display: inline-block;
+  padding: 0.1rem;
+}
