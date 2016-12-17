@@ -1,0 +1,49 @@
+{
+  "name": "varezkin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "docs/index.html",
+  "scripts": {
+    "start": "gulp",
+    "build": "NODE_ENV=production && gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://palegrow@github.com/palegrow-studio/varezkin.git"
+  },
+  "author": "palegrow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/palegrow-studio/varezkin/issues"
+  },
+  "homepage": "https://github.com/palegrow-studio/varezkin#readme",
+  "dependencies": {
+    "pale-blocks": "^0.3.1"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.3",
+    "browser-sync": "^2.18.2",
+    "del": "^2.2.2",
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-bem-bundle-builder": "^0.1.0",
+    "gulp-bem-bundler-fs": "0.0.7",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^2.0.0",
+    "gulp-debug": "^3.0.0",
+    "gulp-flatten": "^0.3.1",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-include": "^2.3.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-nunjucks-html": "^2.0.0",
+    "gulp-postcss": "^6.2.0",
+    "gulp-sourcemaps": "^2.2.1",
+    "gulp-typograf": "^2.0.0",
+    "gulp-uglify": "^2.0.0",
+    "postcss-assets": "^4.1.0",
+    "postcss-color-function": "^2.0.1",
+    "postcss-import": "^9.0.0",
+    "postcss-nested": "^1.0.0",
+    "postcss-pxtorem": "^3.3.1"
+  }
+}
