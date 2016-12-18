@@ -1,0 +1,75 @@
+.info {
+  padding: 1rem;
+}
+
+
+.info__avatar {
+  display: block;
+
+  max-width: 200px;
+  height: auto;
+  margin: 0 auto 1rem;
+
+  border-radius: 50%;
+}
+
+
+.info__heading {
+  margin-bottom: 1rem;
+
+  text-align: center;
+
+  font-size: 1.6rem;
+  font-weight: normal;
+  line-height: 1.1;
+}
+
+
+.info__lead {
+  margin-bottom: 1rem;
+
+  text-align: center;
+
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+
+.info__contacts {
+  margin: 0 0 1rem;
+  padding: 0;
+
+  list-style: none;
+}
+
+
+.info__contacts-item {
+  text-align: center;
+
+  font-size: 0.9rem;
+
+  &:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+}
+
+
+.info__contacts-link {
+  transition: opacity 0.1s ease-out;
+  text-decoration: none;
+
+  color: #5e81a8;
+
+  &:hover,
+  &focus {
+    opacity: 0.8;
+    color: #5e81a8;
+  }
+}
+
+
+.info__widget {
+  width: 130px;
+  margin: auto;
+}

@@ -1,0 +1,53 @@
+.header {
+  display: flex;
+
+  box-sizing: border-box;
+  min-height: 64px;
+  padding: 16px 80px 16px 16px;
+
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+
+.header__title {
+  margin: 0 1rem 0 0;
+
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+
+.header__contacts {
+  font-size: 14px;
+}
+
+
+.header__link  {
+  display: block;
+
+  padding: 0.25rem;
+
+  transition: opacity 0.1s ease-out;
+  text-decoration: none;
+
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    opacity: 0.8;
+    color: inherit;
+  }
+}
+
+
+.header__button {
+  position: absolute;
+  z-index: 1;
+  top: 8px;
+  right: 12px;
+}

@@ -26,16 +26,15 @@ const uglify = require('gulp-uglify');
 
 
 const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV == 'development';
-const DEST = 'dist';
+const DEST = 'docs';
 
 const builder = bundleBuilder({
   levels: [
     'node_modules/pale-blocks/blocks',
-    'node_modules/pale-blocks/design/blocks',
     'blocks'
   ],
   techMap: {
-    css: ['post.css', 'css'],
+    css: ['css', 'post.css'],
     js: ['js'],
     image: ['jpg', 'png', 'svg']
   }
@@ -46,12 +45,14 @@ gulp.task('buildCss', function() {
     .pipe(builder({
       css: bundle => bundle.src('css')
         .pipe(gulpIf(isDevelopment, sourcemaps.init()))
+        .pipe(postcss([
+          require("postcss-import")
+        ]))
         .pipe(concat(bundle.name + '.css'))
         .pipe(postcss([
-          require("postcss-import"),
           require("postcss-nested"),
           require("postcss-color-function"),
-          require("postcss-pxtorem"),
+          // require("postcss-pxtorem"),
           require('postcss-assets')({
             loadPaths: [DEST+'/**'],
             relative: DEST,
@@ -83,6 +84,14 @@ gulp.task('buildImage', function() {
         .pipe(gulp.dest(DEST+'/images'))
     }))
     .pipe(debug({title: 'buildImage:'}));
+});
+
+gulp.task('images', function() {
+  return gulp.src('images**/*.+(png|jpg|svg)')
+  .pipe(gulpIf(!isDevelopment, imagemin()))
+  .pipe(flatten())
+  .pipe(gulp.dest(DEST+'/images'))
+  .pipe(debug({title: 'images:'}));
 });
 
 gulp.task('buildJs', function() {
@@ -129,7 +138,7 @@ gulp.task('buildHtml', function() {
 gulp.task('build', gulp.series(
   'clean',
   'buildImage',
-  gulp.parallel('buildCss', 'buildHtml', 'buildJs')
+  gulp.parallel('buildCss', 'buildHtml', 'buildJs', 'images')
 ));
 
 gulp.task('watch', function() {

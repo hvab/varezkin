@@ -1,25 +1,14 @@
 module.exports = {
   decl: [
+    'jquery',
+    'page',
+    'link',
+    'button',
     'header',
-    'footer'
+    'drawer-button',
+    'drawer',
+    'info',
+    'slider',
+    'obfuscator',
   ]
 };
-
-// module.exports = {
-//   decl: [
-//     'page',
-//     'button',
-//     'clearfix',
-//     'container',
-//     'content',
-//     'hint',
-//     'icon',
-//     'image',
-//     'link',
-//     'media',
-//     'table',
-//     'text',
-//     'header',
-//     'footer'
-//   ]
-// };

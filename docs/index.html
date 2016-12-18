@@ -29,9 +29,55 @@
   </head>
   <body class="page">
 
-    {% block page %}
-    BLOCK PAGE
-    {% endblock page %}
+<header class="page__header header">
+  <h1 class="header__title">Фотограф Родион Варежкин</h1>
+
+  <div class="header__contacts"><a href="tel:99219502370" class="header__link link">+7&#160;921&#160;950-23-70</a></div>
+
+  <div class="header__button">
+    <button class="button page__drawer-button drawer-button"><span class="drawer-button__sr">Меню</span></button>
+  </div>
+</header>
+
+<div class="page__drawer drawer">
+
+  <div class="info">
+    <img src="images/page__avatar.jpg" width="683" alt="683" class="info__avatar">
+
+    <div class="info__heading">Фотограф Родион Варежкин</div>
+
+    <div class="info__lead">Фотосъёмка мероприятий. Свадьбы. Love-Story. Дети. Портфолио. Репортаж. Праздники. Корпоративы. Интерьер. Пейзаж. Ваши питомцы.</div>
+
+    <ul class="info__contacts">
+      <li class="info__contacts-item"><a class="info__contacts-link link" href="tel:99219502370">+7&#160;921&#160;950-23-70</a></li>
+      <li class="info__contacts-item"><a class="info__contacts-link link" href="mailto:rodion_varezkin@mail.ru">rodion_varezkin@mail.ru</a></li>
+      <li class="info__contacts-item"><a class="info__contacts-link link" href="https://vk.com/rodion_varezkin">Группа ВК</a></li>
+      <li class="info__contacts-item"><a class="info__contacts-link link" href="https://vk.com/varezkin">Моя страница ВК</a></li>
+    </ul>
+
+    <div class="info__widget">
+      <script type="text/javascript" src="//vk.com/js/api/openapi.js?136"></script>
+      <!-- VK Widget -->
+      <div id="vk_contact_us"></div>
+      <script type="text/javascript">
+      VK.Widgets.ContactUs("vk_contact_us", {text: "Напишите мне", height: 30}, -57579355);
+      </script>
+    </div>
+  </div>
+
+</div>
+
+<div class="slider slider_theme_simple">
+  <div class="slider__item" style="background-image: url(images/slider__wed-1.jpg);"></div>
+  <div class="slider__item" style="background-image: url(images/slider__studio-1.jpg);"></div>
+  <div class="slider__item" style="background-image: url(images/slider__report-1.jpg);"></div>
+  <div class="slider__item" style="background-image: url(images/slider__subject-1.jpg);"></div>
+  <div class="slider__item" style="background-image: url(images/slider__child-1.jpg);"></div>
+  <div class="slider__item" style="background-image: url(images/slider__landscape-1.jpg);"></div>
+  <div class="slider__item" style="background-image: url(images/slider__album-1.jpg);"></div>
+</div>
+
+<div class="page__obfuscator obfuscator"></div>
 
     <script src="main.js"></script>
 
