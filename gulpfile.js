@@ -138,7 +138,7 @@ gulp.task('buildHtml', function() {
 gulp.task('build', gulp.series(
   'clean',
   gulp.parallel('buildImage', 'images'),
-  gulp.parallel('buildCss', 'buildHtml', 'buildJs', 'images')
+  gulp.parallel('buildCss', 'buildHtml', 'buildJs')
 ));
 
 gulp.task('watch', function() {
