@@ -50,6 +50,7 @@ gulp.task('buildCss', function() {
         ]))
         .pipe(concat(bundle.name + '.css'))
         .pipe(postcss([
+          require("postcss-for"),
           require("postcss-nested"),
           require("postcss-color-function"),
           require('postcss-assets')({
@@ -136,7 +137,7 @@ gulp.task('buildHtml', function() {
 
 gulp.task('build', gulp.series(
   'clean',
-  'buildImage',
+  gulp.parallel('buildImage', 'images'),
   gulp.parallel('buildCss', 'buildHtml', 'buildJs', 'images')
 ));
 

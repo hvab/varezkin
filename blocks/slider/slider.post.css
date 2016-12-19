@@ -12,11 +12,15 @@
 
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
 
   &:focus {
     outline: none;
   }
+}
+
+@for $i from 1 to 39 {
+  .slider__item:nth-child($i) { background-image: resolve("slider__$(i).jpg"); }
 }
 
 
