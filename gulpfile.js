@@ -52,7 +52,6 @@ gulp.task('buildCss', function() {
         .pipe(postcss([
           require("postcss-nested"),
           require("postcss-color-function"),
-          // require("postcss-pxtorem"),
           require('postcss-assets')({
             loadPaths: [DEST+'/**'],
             relative: DEST,
@@ -146,7 +145,10 @@ gulp.task('watch', function() {
     'blocks/**/*.deps.js',
     'bundles/**/*.bemdecl.js'
   ], gulp.series('buildImage', gulp.parallel('buildCss', 'buildJs')));
-  gulp.watch('pages/**/*.html', gulp.series('buildHtml'));
+  gulp.watch([
+    'pages/**/*.html',
+    'templates/**/*.html'
+  ], gulp.series('buildHtml'));
   gulp.watch('blocks/**/*.css', gulp.series('buildCss'));
   gulp.watch('blocks/**/*.js', gulp.series('buildJs'));
   gulp.watch('blocks/**/*.+(png|jpg|svg)', gulp.series('buildImage', 'buildCss'));
