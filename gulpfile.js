@@ -46,10 +46,7 @@ gulp.task('buildCss', function() {
       css: bundle => bundle.src('css')
         .pipe(gulpIf(isDevelopment, sourcemaps.init()))
         .pipe(postcss([
-          require("postcss-import")
-        ]))
-        .pipe(concat(bundle.name + '.css'))
-        .pipe(postcss([
+          require("postcss-import"),
           require("postcss-for"),
           require("postcss-nested"),
           require("postcss-color-function"),
@@ -68,6 +65,7 @@ gulp.task('buildCss', function() {
             sound: 'Blow'
           };
         }))
+        .pipe(concat(bundle.name + '.css'))
         .pipe(gulpIf(isDevelopment, sourcemaps.write('.')))
         .pipe(gulpIf(!isDevelopment, csso()))
         .pipe(gulp.dest(DEST))
@@ -110,6 +108,14 @@ gulp.task('buildJs', function() {
     .pipe(debug({title: 'buildJs:'}));
 });
 
+gulp.task('copy', function() {
+  return gulp.src([
+    'CNAME'
+  ])
+  .pipe(gulp.dest(DEST))
+  .pipe(debug({title: 'copy:'}));
+});
+
 
 gulp.task('clean', function() {
   return del(DEST+'/*');
@@ -138,7 +144,7 @@ gulp.task('buildHtml', function() {
 gulp.task('build', gulp.series(
   'clean',
   gulp.parallel('buildImage', 'images'),
-  gulp.parallel('buildCss', 'buildHtml', 'buildJs')
+  gulp.parallel('buildCss', 'buildHtml', 'buildJs', 'copy')
 ));
 
 gulp.task('watch', function() {
