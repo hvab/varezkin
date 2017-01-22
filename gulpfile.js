@@ -85,7 +85,7 @@ gulp.task('buildImage', function() {
 });
 
 gulp.task('images', function() {
-  return gulp.src('images**/*.+(png|jpg|svg)')
+  return gulp.src('images/**/*.+(png|jpg|svg)')
   .pipe(gulpIf(!isDevelopment, imagemin()))
   .pipe(flatten())
   .pipe(gulp.dest(DEST+'/images'))
